@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tidbit</title>
+  <title>Tidbit | <%= yield(:title) %></title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/base-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -9,7 +10,17 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="layout">
+  <a href="#menu" id="menuLink" class="menu-link">
+      <span></span><!-- TODO(raymond) add a menu button -->
+  </a>
+  <div id="menu">
+      <%= render partial: 'shared/menu' %>
+  </div>
+  <div id="main">
+      <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

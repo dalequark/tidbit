@@ -1,0 +1,26 @@
+<div class="pure-menu pure-menu-open">
+  <a class="pure-menu-heading" href="<%= root_path %>">Tidbit</a>
+  <ul>
+
+    <li class="<%= current_page?(questions_path) ? 'pure-menu-selected' : '' %>">
+      <a href="<%= questions_path %>">Questions</a>
+    </li>
+
+    <li class="<%= current_page?(answers_path) ? 'pure-menu-selected' : '' %>">
+      <a href="<%= answers_path %>">Answers</a>
+    </li>
+
+    <li class="<%= current_page?(categories_path) ? 'pure-menu-selected menu-item-divided' : 'menu-item-divided' %>">
+      <a href="<%= categories_path %>">Categories</a>
+    </li>
+
+    <li class="<%= current_page?(question_categories_path) ? 'pure-menu-selected' : '' %>">
+      <a href="<%= question_categories_path %>">Question Categories</a>
+    </li>
+
+    <li class="<%= current_page?(users_path) ? 'pure-menu-selected' : '' %>">
+      <a href="<%= users_path %>">Users</a>
+    </li>
+
+  </ul>
+</div>
