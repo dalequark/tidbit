@@ -31,7 +31,7 @@ namespace :db do
     200.times do |n|
       question = Question.all.sample
       content = Faker::Lorem.sentence([*8..20].sample)
-      Answer.new(content: :content,
+      Answer.new(content: content,
                  user: User.all.sample,
                  question: question).save
     end
