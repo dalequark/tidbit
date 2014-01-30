@@ -14,7 +14,11 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
   def new
-    @question = Question.new
+    if !signed_in?
+      redirect_to signin_path
+    else
+      @question = Question.new
+    end
   end
 
   # GET /questions/1/edit
@@ -25,13 +29,15 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
-    puts params[:categories]
+      @question.user_id = current_user
+    puts @question.inspect
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render action: 'show', status: :created, location: @question }
       else
         format.html { render action: 'new' }
+        puts @question.errors[:user] = "must be logged in to post!"
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
