@@ -3,18 +3,21 @@ Tidbit::Application.routes.draw do
   get "/" => 'static_pages#home'
   get "/home" => 'static_pages#home'
   get "/signup" => 'users#new'
+  get '/questions/:id/answers/new' => 'answers#new', :as => :new_answer
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   resources :question_categories
 
   resources :categories
-
-  get '/questions/:id/answers/new' => 'answers#new', :as => :new_answer
 
   resources :answers
 
   resources :questions
 
   resources :users
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'
 
