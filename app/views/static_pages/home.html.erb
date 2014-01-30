@@ -2,7 +2,15 @@
 <h2> Ask. Answer. Earn </h2>
 
 <% Question.all do |question|%>
-<tr>
-  <td> <%= question.title %> </td>
-</tr>
+    <tr>
+      <td> <%= question.title %> </td>
+    </tr>
+<% end %>
+
+<% if signed_in? %>
+    <p>Welcome back <%= current_user.name %></p>
+    <p><%= link_to "Sign out", signout_path, method: :delete %></p>
+<% else %>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p><%= link_to "Sign in!", signin_path %></p>
 <% end %>
