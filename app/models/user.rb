@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
             uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  validates :bio, presence: true, length: { maximum: 140 }
 
   has_many :questions
   has_many :answers

@@ -11,18 +11,23 @@ namespace :db do
       name = Faker::Name.name
       email = "example-#{n+1}@example.com"
       password = "password"
+      biography = Faker::Lorem.sentence(6)
       User.create!(name: name,
                    email: email,
                    password: password,
-                   password_confirmation: password)
+                   password_confirmation: password,
+                   bio: biography)
     end
   end
 
   def fake_questions
     User.all.each do |user|
       [*0..5].sample.times do |n|
-        content = Faker::Lorem.sentence([*8..20].sample).sub('.', '?')
-        user.questions.create!(content: content)
+        title = Faker::Lorem.sentence([*5..10].sample).sub('.', '?')
+        content = Faker::Lorem.sentence([*8..20].sample)
+        user.questions.create!(
+            title: title,
+            content: content)
       end
     end
   end
@@ -31,9 +36,9 @@ namespace :db do
     200.times do |n|
       question = Question.all.sample
       content = Faker::Lorem.sentence([*8..20].sample)
-      Answer.new(content: content,
-                 user: User.all.sample,
-                 question: question).save
+      Answer.create!(content: content,
+                     user: User.all.sample,
+                     question: question)
     end
   end
 end

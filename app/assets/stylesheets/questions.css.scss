@@ -1,3 +1,50 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.question {
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ddd;
+
+  .headline {
+    font-weight: bold;
+  }
+
+  .text {
+
+  }
+
+  .bio_unit {
+    margin: -20px;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    min-height: 50px;
+    box-sizing: border-box;
+    .gravatar {
+      float: left;
+      margin-right: 5px;
+      margin-top: 0px;
+    }
+    .name, .bio {
+      font-size: 13px;
+    }
+    .name {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+  }
+
+  .meta {
+    margin: 5px 0;
+    color: #aaa;
+    font-size: 13px;
+    a {
+      color: #aaa;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
