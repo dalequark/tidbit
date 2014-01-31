@@ -11,5 +11,6 @@
  *= require_self
  *= require fonts.css
  *= require theme.css
+ *= require custom.css.scss
  *= require questions.css.scss
  */

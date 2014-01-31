@@ -1,10 +1,10 @@
 <h1>TidBits, not just another punny title</h1>
 <h2> Ask. Answer. Earn </h2>
 
-<% Question.first(50) do |question|%>
-    <tr>
-      <td> <%= question.title %> </td>
-    </tr>
+<% Question.first(50).each do |question|%>
+    <div class="question">
+        <%= question.title %>
+    </div>
 <% end %>
 
 <% if signed_in? %>
