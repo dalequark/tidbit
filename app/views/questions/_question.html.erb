@@ -16,6 +16,6 @@
   <div class="bio_unit">
     <div class="gravatar"><%= gravatar_for(question.user) %></div>
     <div class="name"><%= question.user.name %></div>
-    <div class="bio"><%= Faker::Lorem.sentence([*4..10].sample) %></div>
+    <div class="bio"><%= question.user.bio %></div>
   </div>
 </div>
