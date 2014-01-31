@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require fonts.css
- *= require theme.css
- *= require custom.css.scss
- *= require questions.css.scss
+ *= require fonts
+ *= require theme
+ *= require custom
+ *= require questions
  */

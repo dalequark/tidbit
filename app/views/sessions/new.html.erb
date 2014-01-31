@@ -1,15 +1,24 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
+<div class="content">
 
-<%= form_for(:session, url: sessions_path) do |f| %>
+  <h1>Sign in</h1>
+  <%= form_for(:session, url: sessions_path, html: {class: "pure-form pure-form-aligned"}) do |f| %>
+      <fieldset>
+        <div class="pure-control-group">
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+        </div>
+        <div class="pure-control-group">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </div>
+        <div class="pure-controls">
+          <%= f.submit "Sign in", class: "pure-button pure-button-primary" %>
+          <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+        </div>
+      </fieldset>
+  <% end %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+</div>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
 
-    <%= f.submit "Sign in" %>
-<% end %>
-
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
