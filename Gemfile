@@ -11,6 +11,9 @@ gem 'sqlite3'
 # For sample user data
 gem 'faker', '1.2.0'
 
+# For pagination
+gem 'will_paginate', '~> 3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
