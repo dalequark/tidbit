@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require fonts
+ *= require pure
  *= require theme
  *= require custom
  *= require questions
