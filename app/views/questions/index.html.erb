@@ -1,26 +1,14 @@
 <% provide(:title, 'Questions') %>
 
-<h1>Listing questions</h1>
+<div class="content">
+  <h1>Listing questions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <%= link_to 'New Question', new_question_path %>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <%= render question %>
-    <% end %>
-  </tbody>
-</table>
+  <% @questions.each do |question| %>
+    <%= render question %>
+  <% end %>
 
-<br>
 
-<%= link_to 'New Question', new_question_path %>
+</div>
+
