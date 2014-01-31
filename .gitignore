@@ -16,4 +16,5 @@
 /tmp
 
 # Ignore IDE
+/.idea/*
 /.idea
