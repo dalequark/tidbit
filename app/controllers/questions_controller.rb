@@ -5,20 +5,12 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.paginate(:page => params[:page], :per_page => 10)
+    @question = Question.new
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
-  end
-
-  # GET /questions/new
-  def new
-    if !signed_in?
-      redirect_to signin_path
-    else
-      @question = Question.new
-    end
   end
 
   # GET /questions/1/edit

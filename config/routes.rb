@@ -7,16 +7,11 @@ Tidbit::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  resources :question_categories
+  resources :questions, only: [:new, :create, :index, :show, :edit, :update, :destroy]
+  resources :answers, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :categories, only: [:new, :create, :index, :show, :edit, :update, :destroy]
 
-  resources :categories
-
-  resources :answers
-
-  resources :questions
-
-  resources :users
-
+  resources :users, only: [:index]
   resources :sessions, only: [:new, :create, :destroy]
 
   root 'static_pages#home'
